@@ -9,4 +9,6 @@ export class AppComponent {
   title = 'Mural - Projeto de Software';
 
   public mostrarCampoLogin = true;
+
+
 }

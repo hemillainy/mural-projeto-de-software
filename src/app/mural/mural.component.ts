@@ -1,5 +1,5 @@
+import { MensagensService } from './../services/mensagens.service';
 import { Component, OnInit } from '@angular/core';
-import { ControllerService } from '../services/controller.service';
 
 @Component({
   selector: 'app-mural',
@@ -8,17 +8,15 @@ import { ControllerService } from '../services/controller.service';
 })
 export class MuralComponent implements OnInit {
 
-  private _mensagens = [];
-  private _controller: ControllerService;
+  public mensagens = [];
 
-  title = this._controller.getMensagens();
-  constructor() {}
+  constructor(private mensagensService: MensagensService) {}
 
   ngOnInit() {
+    this.mensagensService.getMensagens().subscribe(msgs => {
+      this.mensagens = msgs;
+    });
+    console.log(this.mensagens);
   }
 
-  public getMensagens() {
-    return this._controller.getMensagens();
-    //return this._mensagens;
-  }
 }
