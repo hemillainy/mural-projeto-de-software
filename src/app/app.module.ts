@@ -9,7 +9,6 @@ import { LoginComponent } from './login/login.component';
 import { MuralComponent } from './mural/mural.component';
 import { MensagensService } from './services/mensagens.service';
 
-
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
 ];

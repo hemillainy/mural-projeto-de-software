@@ -1,3 +1,121 @@
+@font-face {
+  font-family: 'FontePadrao';
+  src: local('./app/fontes/MagettasLightDEMO.otf'), url('./app/fontes/MagettasLightDEMO.otf');
+}
+
 h1, div#login {
   text-align: center;
+}
+
+div.container {
+  width: 830px;
+}
+
+a.nav-link {
+  color: #4e5052;
+}
+
+ul#nav {
+  height: 60px;
+}
+
+button.btn {
+  border-left-width: 1px;
+  margin-left: 3px;
+}
+
+div#enviar, div#login_f {
+  text-align: center;
+  width: 400px;
+}
+
+div#pesquisar {
+  width: 400px;
+}
+
+div.scroll::-webkit-scrollbar {
+  width: 5px;
+  background: rgba(0, 0, 0, 0.089);
+}
+
+div.scroll::-webkit-scrollbar-thumb {
+  background: rgba(14, 13, 14, 0.418);
+  border-radius: 9px;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+  background: rgba(0, 0, 0, 0.089);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(14, 13, 14, 0.432) ;
+  border-radius: 9px;
+}
+
+h1#cab, ul#nav, div#enviar, div#pesquisar, div#login_f {
+  font-family: 'FontePadrao';
+}
+
+button.btn-sm:focus, button.close:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+button.nav-link {
+  margin-right: 25px;
+  border-color: #0000005c;
+}
+
+button.btn-sm {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+button.btn-outline-secondary:hover, button.btn-secondary {
+  color: #808488;
+  background: #ffffffd7;
+}
+
+input.sem_borda:focus, textarea.sem_borda:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+input#tipo_pesquisa {
+  height: 31px;
+}
+
+button.btn-outline-secondary {
+  border-color: #ced4da;
+}
+
+body {
+  background-color: #fbfbfb
+}
+
+div#alert {
+  text-align: center;
+}
+
+.voltar-ao-topo {
+  position: fixed;
+  bottom: 1em;
+  right: 2em;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  padding: 1em;
+  padding-top: 2px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+  padding-left: 5px;
+}
+.voltar-ao-topo:hover {
+  background-color: rgba(0, 0, 0, 0.055);
+  color: black;
+}
+
+.material-icons {
+  font-size: 40px;
 }
