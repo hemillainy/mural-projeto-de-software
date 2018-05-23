@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './mural.component.html',
   styleUrls: ['./mural.component.css']
 })
-
 export class MuralComponent implements OnInit {
 
   public mensagens = [];
