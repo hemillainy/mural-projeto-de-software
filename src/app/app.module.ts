@@ -8,9 +8,11 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './login/login.component';
 import { MuralComponent } from './mural/mural.component';
 import { MensagensService } from './services/mensagens.service';
+import { LoginService } from './services/login.service';
 
 const appRoutes: Routes = [
   {path: 'login', component: LoginComponent},
+  {path: 'mural', component: MuralComponent}
 ];
 
 @NgModule({
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MensagensService],
+  providers: [MensagensService, LoginService
+  ],
   bootstrap: [AppComponent],
 })
 

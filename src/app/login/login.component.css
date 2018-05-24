@@ -1,3 +1,4 @@
-div#login {
-  align-content: center
+#login {
+  text-align: center;
+  width: 400px;
 }

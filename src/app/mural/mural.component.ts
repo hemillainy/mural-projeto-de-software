@@ -8,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuralComponent implements OnInit {
 
-  public mensagens = [];
-
+  public exibir = true;
+  private mensagens = [];
   constructor(private mensagensService: MensagensService) {}
 
   ngOnInit() {
@@ -18,5 +18,13 @@ export class MuralComponent implements OnInit {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
       }));
     });
+  }
+
+  public getMensagens(){
+    return this.mensagens;
+  }
+
+  public setExibir() {
+    this.exibir = !this.exibir;
   }
 }

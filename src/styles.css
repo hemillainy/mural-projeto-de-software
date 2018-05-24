@@ -24,7 +24,7 @@ button.btn {
   margin-left: 3px;
 }
 
-div#enviar, div#login_f {
+div#enviar{
   text-align: center;
   width: 400px;
 }
@@ -53,7 +53,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 9px;
 }
 
-h1#cab, ul#nav, div#enviar, div#pesquisar, div#login_f {
+h1#cab, ul#nav, div#enviar, div#pesquisar, div#login {
   font-family: 'FontePadrao';
 }
 

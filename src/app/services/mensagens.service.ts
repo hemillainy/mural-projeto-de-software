@@ -7,9 +7,10 @@ export class MensagensService {
 
   constructor(private http: Http) { }
 
+  private frontends = [];
+
   public getMensagens() {
     return this.http.get('http://150.165.85.16:9900/api/msgs')
     .map(response => response.json());
   }
-
 }

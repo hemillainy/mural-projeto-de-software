@@ -1,13 +1,13 @@
-<div id="login" *ngIf="getExibir()">
-  <h5>
-    Entre com seu user de frontend para começar a enviar mensagens:
-  </h5>
-  <br>
-  <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Frontend</span>
-      </div>
-      <input id="front" type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-      <button type="button" class="btn btn-outline-secondary btn-sm" onclick="login_frontend(front, login_f);">Enviar</button>
+<div *ngIf="exibir">
+  <div id="login" class="container">
+    <h5>Entre com seu user de frontend para começar a enviar mensagens:</h5>
+    <br>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Frontend</span>
+        </div>
+        <input #front type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="login(front.value)">Enviar</button>           
+    </div>
   </div>
 </div>
