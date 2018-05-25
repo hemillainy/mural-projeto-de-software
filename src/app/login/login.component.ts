@@ -12,20 +12,21 @@ export class LoginComponent {
   public frontend: string;
   constructor(private loginService: LoginService, private router: Router) { }
 
-  public exibir = true;
+  private exibir = true;
   
   public login(frontend: string) {
-    this.loginService.getFronteds()
-    .subscribe(frontends => {
-      if (frontends.indexOf(frontend) != -1) {
-        this.frontend = frontend;
-        this.exibir = false;
-        this.router.navigate(['/mural']);
-      }
-    })
+    this.loginService.login(frontend);
+    if (this.loginService.getAutenticado()) {
+      this.frontend = frontend;
+      this.setExibir();
+    }
   }
 
   public setExibir() {
     this.exibir = !this.exibir;
+  }
+
+  public getExibir(): boolean {
+    return this.exibir;
   }
 }

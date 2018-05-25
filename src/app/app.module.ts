@@ -9,10 +9,18 @@ import { LoginComponent } from './login/login.component';
 import { MuralComponent } from './mural/mural.component';
 import { MensagensService } from './services/mensagens.service';
 import { LoginService } from './services/login.service';
+import { AuthGuardService } from './guard/auth-guard.service';
 
 const appRoutes: Routes = [
+  {path: '', 
+      component: AppComponent,
+      canActivate: [AuthGuardService]
+  },
   {path: 'login', component: LoginComponent},
-  {path: 'mural', component: MuralComponent}
+  {path: 'mural', 
+      component: MuralComponent,
+      canActivate: [AuthGuardService]
+  }
 ];
 
 @NgModule({
@@ -27,7 +35,10 @@ const appRoutes: Routes = [
     HttpModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MensagensService, LoginService
+  providers: [
+    MensagensService, 
+    LoginService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent],
 })
