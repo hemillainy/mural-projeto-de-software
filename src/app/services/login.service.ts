@@ -2,6 +2,7 @@ import { Http } from '@angular/http';
 import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import swal from 'sweetalert';
 
 @Injectable()
 export class LoginService {
@@ -19,6 +20,8 @@ export class LoginService {
         this.router.navigate(['/mural']);
       } else {
         this.autenticado = false;
+        const swal = require('sweetalert');
+        swal('User não cadastrado!');
       }
     });
   }
