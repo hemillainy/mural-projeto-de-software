@@ -1,10 +1,10 @@
 <div *ngIf="getExibir">
   <div id="login" class="container">
-    <h5>Entre com seu user de frontend para começar a enviar mensagens:</h5>
+    <h5>Entre com seu user para começar a enviar mensagens:</h5>
     <br>
     <div class="input-group input-group-sm mb-3">
         <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Frontend</span>
+            <span class="input-group-text" id="inputGroup-sizing-sm">User</span>
         </div>
         <input #front type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
         <button type="button" class="btn btn-outline-secondary btn-sm" (click)="login(front.value)">Enviar</button>           
