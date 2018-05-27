@@ -10,15 +10,15 @@ import swal from 'sweetalert';
 })
 export class LoginComponent {
 
-  public frontend: string;
+  public user = 'hemillainy';
   constructor(private loginService: LoginService, private router: Router) { }
 
   private exibir = true;
   
-  public login(frontend: string) {
-    this.loginService.login(frontend);
+  public login(user: string) {
+    this.loginService.login(user);
     if (this.loginService.getAutenticado()) {
-      this.frontend = frontend;
+      this.user = user;
       this.setExibir();
     }
   }
@@ -27,7 +27,12 @@ export class LoginComponent {
     this.exibir = !this.exibir;
   }
 
-  public getExibir(): boolean {
+  public getExibir() {
     return this.exibir;
   }
+
+  public getUser(): string{
+    return this.user;
+  }
+
 }

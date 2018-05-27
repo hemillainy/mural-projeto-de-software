@@ -17,7 +17,7 @@ export class LoginService {
     .subscribe(frontends => {
       if(frontends.indexOf(frontend) != -1){
         this.autenticado = true;
-        this.router.navigate(['/mural']);
+        this.router.navigate(['/inicio']);
       } else {
         this.autenticado = false;
         const swal = require('sweetalert');

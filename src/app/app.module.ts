@@ -18,9 +18,13 @@ const appRoutes: Routes = [
       canActivate: [AuthGuardService]
   },
   {path: 'login', component: LoginComponent},
-  {path: 'mural', 
+  {path: 'inicio', 
       component: MuralComponent,
-      canActivate: [AuthGuardService]
+      //canActivate: [AuthGuardService]
+  },
+  {path: 'enviar-mensagem',
+      component: EnvioMensagensComponent,
+      //canActivate: [AuthGuardService]
   }
 ];
 

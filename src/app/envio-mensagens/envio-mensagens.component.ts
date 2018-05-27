@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MensagensService } from '../services/mensagens.service';
 
 @Component({
   selector: 'app-envio-mensagens',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./envio-mensagens.component.css']
 })
 export class EnvioMensagensComponent implements OnInit {
-
-  constructor() { }
+ 
+  constructor(private enviarMsg: MensagensService) { }
 
   ngOnInit() {
+  }
+
+  public enviar(titulo: string, mensagem: string, autor: string, senha: string) {
+    this.enviarMsg.enviaMensagem(titulo, mensagem, autor, senha);
   }
 
 }

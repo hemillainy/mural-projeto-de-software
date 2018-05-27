@@ -3,7 +3,7 @@
   src: local('./app/fontes/MagettasLightDEMO.otf'), url('./app/fontes/MagettasLightDEMO.otf');
 }
 
-h1, div#login {
+h1{
   text-align: center;
 }
 
@@ -24,12 +24,8 @@ button.btn {
   margin-left: 3px;
 }
 
-div#enviar{
-  text-align: center;
-  width: 400px;
-}
 
-div#pesquisar {
+div#pesquisar, div#enviar {
   width: 400px;
 }
 
@@ -92,10 +88,6 @@ button.btn-outline-secondary {
 
 body {
   background-color: #fbfbfb
-}
-
-div#alert {
-  text-align: center;
 }
 
 .voltar-ao-topo {
