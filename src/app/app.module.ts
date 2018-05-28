@@ -21,10 +21,6 @@ const appRoutes: Routes = [
   {path: 'inicio', 
       component: MuralComponent,
       //canActivate: [AuthGuardService]
-  },
-  {path: 'enviar-mensagem',
-      component: EnvioMensagensComponent,
-      //canActivate: [AuthGuardService]
   }
 ];
 

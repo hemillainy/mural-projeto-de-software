@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EnvioMensagensComponent } from '../envio-mensagens/envio-mensagens.component';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  private envioMsg: EnvioMensagensComponent;
   constructor() { }
 
   ngOnInit() {
   }
 
+  public setExibirEnvio(){
+    this.envioMsg.setExibir();
+  }
 }

@@ -24,6 +24,9 @@ export class MuralComponent implements OnInit {
     return this.mensagens;
   }
 
+  public getExibir() {
+    return this.exibir;
+  }
   public setExibir() {
     this.exibir = !this.exibir;
   }

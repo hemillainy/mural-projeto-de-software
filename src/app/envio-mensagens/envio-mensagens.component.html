@@ -1,28 +1,30 @@
-<div id="enviar" class="container">
-  <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Titulo</span>
-      </div>
-      <input #titulo type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
-  </div>
-  <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Mensagem</span>
-      </div>
-      <textarea #mensagem class="sem_borda form-control" rows="1"></textarea>
-    
-  </div>
-  <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Autor</span>
-      </div>
-      <input #autor type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-  </div>
-  <div class="input-group input-group-sm mb-3">
-      <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-sm">Senha</span>
-      </div>
-      <input #senha type="password" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-      <button type="button" class="btn btn-outline-secondary btn-sm" (click)="enviar(titulo.value, mensagem.value, autor.value, senha.value)">Enviar</button>           
-  </div>
+<div *ngIf="exibir">
+    <div id="enviar" class="container">
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Titulo</span>
+        </div>
+        <input #titulo type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Mensagem</span>
+        </div>
+        <textarea #mensagem class="sem_borda form-control" rows="1"></textarea>
+        
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Autor</span>
+        </div>
+        <input #autor type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+    </div>
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-sm">Senha</span>
+        </div>
+        <input #senha type="password" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
+        <button type="button" class="btn btn-outline-secondary btn-sm" (click)="enviar(titulo.value, mensagem.value, autor.value, senha.value)">Enviar</button>           
+    </div>
+    </div>
 </div>
