@@ -8,13 +8,13 @@ import { EnvioMensagensComponent } from '../envio-mensagens/envio-mensagens.comp
 })
 export class NavbarComponent implements OnInit {
 
-  private envioMsg: EnvioMensagensComponent;
+  private exibirEnvio = false;
   constructor() { }
 
   ngOnInit() {
   }
 
-  public setExibirEnvio(){
-    this.envioMsg.setExibir();
+  public setExibirEnvio() {
+    this.exibirEnvio = !this.exibirEnvio;
   }
 }

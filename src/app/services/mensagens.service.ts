@@ -8,7 +8,6 @@ import swal from 'sweetalert';
 @Injectable()
 export class MensagensService {
 
-  private login: LoginComponent;
   private mural: MuralComponent;
 
   constructor(private http: Http) { }

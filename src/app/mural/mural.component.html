@@ -1,5 +1,4 @@
-<div *ngIf="exibir">
-  <app-envio-mensagens *ngIf="exibir"></app-envio-mensagens>
+<div *ngIf="exibirMural">
   <div *ngFor='let item of mensagens'>
     <div class="card bg-light mb-3 shadow scroll">
       <div class="card-header">{{item.title}}</div>

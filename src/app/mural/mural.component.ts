@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuralComponent implements OnInit {
 
-  public exibir = true;
+  public exibirMural = true;
   private mensagens = [];
   constructor(private mensagensService: MensagensService) {}
 
@@ -24,10 +24,10 @@ export class MuralComponent implements OnInit {
     return this.mensagens;
   }
 
-  public getExibir() {
-    return this.exibir;
+  public getExibirMural() {
+    return this.exibirMural;
   }
-  public setExibir() {
-    this.exibir = !this.exibir;
+  public setExibirMural() {
+    this.exibirMural = !this.exibirMural;
   }
 }
