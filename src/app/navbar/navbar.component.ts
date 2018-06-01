@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EnvioMensagensComponent } from '../envio-mensagens/envio-mensagens.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { EnvioMensagensComponent } from '../envio-mensagens/envio-mensagens.comp
 export class NavbarComponent implements OnInit {
 
   private exibirEnvio = false;
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
   }
@@ -17,4 +18,9 @@ export class NavbarComponent implements OnInit {
   public setExibirEnvio() {
     this.exibirEnvio = !this.exibirEnvio;
   }
+
+  public attMural() {
+    this.route.navigate(['/inicio']);
+  }
+
 }

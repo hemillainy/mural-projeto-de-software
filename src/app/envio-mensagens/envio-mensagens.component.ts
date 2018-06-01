@@ -8,13 +8,14 @@ import { MensagensService } from '../services/mensagens.service';
 })
 export class EnvioMensagensComponent implements OnInit {
  
-  constructor(private enviarMsg: MensagensService) { }
+  constructor(private msgService: MensagensService) { }
 
   ngOnInit() {
   }
 
   public enviar(titulo: string, mensagem: string, autor: string, senha: string) {
-    this.enviarMsg.enviaMensagem(titulo, mensagem, autor, senha);
+    this.msgService.msgCreated
+    // this.msgService.enviaMensagem(titulo, mensagem, autor, senha);
   }
 
 }

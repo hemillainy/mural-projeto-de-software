@@ -8,26 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MuralComponent implements OnInit {
 
-  public exibirMural = true;
-  private mensagens = [];
+  exibirMural = true;
+  mensagens: Object[] = [];
   constructor(private mensagensService: MensagensService) {}
 
   ngOnInit() {
-    this.mensagensService.getMensagens().subscribe(msgs => {
-      this.mensagens = (msgs.sort(function(a, b) {
-        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-      }));
+    this.mensagensService.getMensagens()
+    .subscribe(msgs => {
+      this.mensagensService.setArrayMsgs(msgs);
+      this.mensagens = this.mensagensService.getArrayMensagens();
     });
   }
 
-  public getMensagens(){
+  getMensagens(){
     return this.mensagens;
   }
 
-  public getExibirMural() {
-    return this.exibirMural;
-  }
   public setExibirMural() {
     this.exibirMural = !this.exibirMural;
   }
+  
 }

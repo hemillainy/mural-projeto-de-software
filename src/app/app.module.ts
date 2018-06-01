@@ -11,6 +11,7 @@ import { MensagensService } from './services/mensagens.service';
 import { LoginService } from './services/login.service';
 import { AuthGuardService } from './guard/auth-guard.service';
 import { EnvioMensagensComponent } from './envio-mensagens/envio-mensagens.component';
+import { PesquisaComponent } from './pesquisa/pesquisa.component';
 
 const appRoutes: Routes = [
   {path: '', 
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     LoginComponent,
     MuralComponent,
-    EnvioMensagensComponent
+    EnvioMensagensComponent,
+    PesquisaComponent
   ],
   imports: [
     BrowserModule,
