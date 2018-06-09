@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { Http, Response } from '@angular/http';
 import { Injectable, EventEmitter } from '@angular/core';
 import {LoginComponent} from '../login/login.component';
@@ -8,17 +9,15 @@ import swal from 'sweetalert';
 @Injectable()
 export class MensagensService {
 
-  private mensagens: Object[] = [];
+  mensagens: Object[] = [];
   msgCreated = new EventEmitter<any>();
   
   constructor(private http: Http) { }
   
-  getArrayMensagens() {
-    return this.mensagens = this.mensagens
+  ordenaMensagens() {
+    this.mensagens = this.mensagens
     .sort((a, b) =>  {
-      //b.created_at
-      //a.created_at
-      return new Date().getTime() - new Date().getTime();
+      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
     });
   }
   
@@ -27,7 +26,8 @@ export class MensagensService {
     .map((response: Response) => response.json());
   }
   
-  notifyAddMsg(): void {
+  notifyAddMsg(msg): void {
+    this.mensagens.push(msg);
     this.msgCreated.emit();
   }
   
@@ -35,7 +35,7 @@ export class MensagensService {
     this.mensagens = mensagens;
   }
   
-  enviaMensagem(titulo: string, mensagem: string, autor: string, senha: string) {
+  enviaMensagem(titulo: string, mensagem: string, autor: string, senha: string): Observable<any> {
      const user = 'hemillainy';
      const body = {
        title: titulo,
@@ -43,15 +43,7 @@ export class MensagensService {
        author: autor,
        credentials: `${user}:${senha}`
      }
-     this.http.post('http://150.165.85.16:9900/api/msgs', body)
-     .subscribe(response => {
-       if (response.status == 200) {
-
-       }
-     },
-     error => {
-       const swal = require('sweetalert');
-       swal('Senha incorreta!');
-     });
+     return this.http.post('http://150.165.85.16:9900/api/msgs', body)
+     .map((response: Response) => response.json());
   }
 }

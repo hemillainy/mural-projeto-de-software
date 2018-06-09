@@ -16,7 +16,8 @@ export class MuralComponent implements OnInit {
     this.mensagensService.getMensagens()
     .subscribe(msgs => {
       this.mensagensService.setArrayMsgs(msgs);
-      this.mensagens = this.mensagensService.getArrayMensagens();
+      this.mensagensService.ordenaMensagens();
+      this.mensagens = this.mensagensService.mensagens;
     });
   }
 

@@ -14,8 +14,11 @@ export class EnvioMensagensComponent implements OnInit {
   }
 
   public enviar(titulo: string, mensagem: string, autor: string, senha: string) {
-    this.msgService.msgCreated
-    // this.msgService.enviaMensagem(titulo, mensagem, autor, senha);
+    this.msgService.msgCreated;
+    this.msgService.enviaMensagem(titulo, mensagem, autor, senha)
+    .subscribe(response => { 
+      this.msgService.notifyAddMsg(response);
+     })
   }
 
 }
