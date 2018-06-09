@@ -17,7 +17,9 @@ export class MensagensService {
   ordenaMensagens() {
     this.mensagens = this.mensagens
     .sort((a, b) =>  {
-      return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+      //b.created_at
+      //a.created_at
+      return new Date().getTime() - new Date().getTime();
     });
   }
   
