@@ -15,14 +15,15 @@ export class PesquisaComponent implements OnInit {
   }
 
   search(atributo: string){
+      
     let array = [];
-    if (this.opcao == "titulo_p") {
-      array = this.msgService.mensagens.filter(msg => msg.title.toLowerCase().indexOf(atributo.toLowerCase()) != -1);
-    } else if (this.opcao == "mensagem_p") {
-      array = this.msgService.mensagens.filter(msg => msg.msg.toLowerCase().indexOf(atributo.toLowerCase()) != -1)
-    } else {
-      array = this.msgService.mensagens.filter(msg => msg.author.toLowerCase().indexOf(atributo.toLowerCase()) != -1)
-    }
+    // if (this.opcao == "titulo_p") {
+    //   array = this.msgService.mensagens.filter(msg => msg.title.toLowerCase().indexOf(atributo.toLowerCase()) != -1);
+    // } else if (this.opcao == "mensagem_p") {
+    //   array = this.msgService.mensagens.filter(msg => msg.msg.toLowerCase().indexOf(atributo.toLowerCase()) != -1)
+    // } else {
+    //   array = this.msgService.mensagens.filter(msg => msg.author.toLowerCase().indexOf(atributo.toLowerCase()) != -1)
+    // }
     return array;
   }
   

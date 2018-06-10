@@ -10,7 +10,7 @@ import swal from 'sweetalert';
 export class MensagensService {
 
   mensagens: Object[] = [];
-  msgCreated = new EventEmitter<any>();
+  msgCreated: EventEmitter<any> = new EventEmitter();
   
   constructor(private http: Http) { }
   
@@ -26,7 +26,7 @@ export class MensagensService {
     .map((response: Response) => response.json());
   }
   
-  notifyAddMsg(msg): void {
+  notifyAddMsg(msg) {
     this.mensagens.push(msg);
     this.msgCreated.emit();
   }
@@ -35,7 +35,7 @@ export class MensagensService {
     this.mensagens = mensagens;
   }
   
-  enviaMensagem(titulo: string, mensagem: string, autor: string, senha: string): Observable<any> {
+  enviaMensagem(titulo: string, mensagem: string, autor: string, senha: string) {
      const user = 'hemillainy';
      const body = {
        title: titulo,

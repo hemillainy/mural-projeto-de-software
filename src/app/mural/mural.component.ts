@@ -13,12 +13,40 @@ export class MuralComponent implements OnInit {
   constructor(private mensagensService: MensagensService) {}
 
   ngOnInit() {
+    this.mensagensService.msgCreated
+    .subscribe(
+      this.attMsgs()
+    );
+    this.mensagensService.getMensagens()
+    .subscribe(msgs => {
+      this.mensagensService.setArrayMsgs(msgs);
+      this.attMsgs();
+    });
+  }
+
+  private attMsgs() {
+    this.mensagensService.ordenaMensagens();
+    this.mensagens = this.mensagensService.mensagens;
+  }
+    /*
+  *  ngOnInit() {
+    this.mensagensService.msgCreated
+    .subscribe(this.attMsgs());
+    this.attMsgs();
+  }
+
+  private attMsgs() {
     this.mensagensService.getMensagens()
     .subscribe(msgs => {
       this.mensagensService.setArrayMsgs(msgs);
       this.mensagensService.ordenaMensagens();
       this.mensagens = this.mensagensService.mensagens;
     });
+  }
+  */
+  updateMural() {
+    this.mensagensService.ordenaMensagens();
+    this.mensagens = this.mensagensService.mensagens;
   }
 
   getMensagens(){
