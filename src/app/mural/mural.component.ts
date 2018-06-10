@@ -14,9 +14,9 @@ export class MuralComponent implements OnInit {
 
   ngOnInit() {
     this.mensagensService.msgCreated
-    .subscribe(
+    .subscribe(emit => {
       this.attMsgs()
-    );
+    });
     this.mensagensService.getMensagens()
     .subscribe(msgs => {
       this.mensagensService.setArrayMsgs(msgs);
