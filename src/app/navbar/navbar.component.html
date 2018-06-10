@@ -7,7 +7,7 @@
             <button type="button" href="#enviar" class="nav-link btn btn-outline-secondary btn-sm" (click)="setExibirEnvio()">Enviar Mensagem</button>
         </li>
         <li class="nav-item">
-        <button type="button" href="#pesquisar" class="nav-link btn btn-outline-secondary btn-sm">Pesquisar</button>
+        <button type="button" href="#pesquisar" class="nav-link btn btn-outline-secondary btn-sm" (click)="setExibirPesquisa()">Pesquisar</button>
         </li>
         <li class="nav-item">
         <button type="button" href="#apagar" class="nav-link btn btn-outline-secondary btn-sm">Apagar</button>
@@ -18,5 +18,7 @@
             </button>
         </li>
     </ul>
+    <app-pesquisa *ngIf="exibirPesquisa"></app-pesquisa>
+    <br>
     <app-envio-mensagens *ngIf="exibirEnvio"></app-envio-mensagens>
 </div>

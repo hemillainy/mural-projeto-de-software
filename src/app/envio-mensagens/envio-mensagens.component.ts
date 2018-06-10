@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MensagensService } from '../services/mensagens.service';
 
@@ -8,13 +9,12 @@ import { MensagensService } from '../services/mensagens.service';
 })
 export class EnvioMensagensComponent implements OnInit {
  
-  constructor(private msgService: MensagensService) { }
+  constructor(private msgService: MensagensService, private route: Router) { }
 
   ngOnInit() {
   }
 
   public enviar(titulo: string, mensagem: string, autor: string, senha: string) {
-    this.msgService.msgCreated;
     this.msgService.enviaMensagem(titulo, mensagem, autor, senha)
     .subscribe(response => { 
       this.msgService.notifyAddMsg(response);

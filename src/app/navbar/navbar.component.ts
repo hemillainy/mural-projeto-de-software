@@ -9,17 +9,22 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  private exibirEnvio = false;
+  exibirEnvio = false;
+  exibirPesquisa = false;
   constructor(private route: Router) { }
 
   ngOnInit() {
   }
 
-  public setExibirEnvio() {
+  setExibirEnvio() {
     this.exibirEnvio = !this.exibirEnvio;
   }
 
-  public attMural() {
+  setExibirPesquisa() {
+    this.exibirPesquisa = !this.exibirPesquisa;
+  }
+
+  attMural() {
     this.route.navigate(['/inicio']);
   }
 

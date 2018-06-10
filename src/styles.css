@@ -24,11 +24,6 @@ button.btn {
   margin-left: 3px;
 }
 
-
-div#pesquisar, div#enviar {
-  width: 400px;
-}
-
 div.scroll::-webkit-scrollbar {
   width: 5px;
   background: rgba(0, 0, 0, 0.089);
@@ -49,7 +44,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 9px;
 }
 
-ul#nav, div#enviar, div#pesquisar, div#login, .display-4 {
+ul#nav, div#enviar, div#pesquisa, div#login, .display-4 {
   font-family: 'FontePadrao';
 }
 
@@ -76,10 +71,6 @@ button.btn-outline-secondary:hover, button.btn-secondary {
 input.sem_borda:focus, textarea.sem_borda:focus {
   box-shadow: 0 0 0 0;
   outline: 0;
-}
-
-input#tipo_pesquisa {
-  height: 31px;
 }
 
 button.btn-outline-secondary {

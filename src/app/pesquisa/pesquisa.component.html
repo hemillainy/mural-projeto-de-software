@@ -1,3 +1,15 @@
-<p>
-  pesquisa works!
-</p>
+<div>
+  <div id="pesquisa" class="container">
+    <div class="input-group input-group-sm mb-3">
+        <div class="input-group-prepend">
+            <select [(ngModel)]="opcao">
+                <option value="titulo_p">Titulo</option>
+                <option value="mensagem_p">Mensagem</option>
+                <option value="autor_p">Autor</option>
+            </select>
+        </div>
+        <input #titulo_pesquisa type="text" class="sem_borda form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"> 
+        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="search(titulo_pesquisa.value)">Enviar</button>
+    </div>
+  </div>
+</div>
